@@ -72,17 +72,9 @@ class MainActivity : AppCompatActivity() {
 //                        "  \"filler\": \"\"\n" +
 //                        "}".trim()
                 //OR
-//                val request ="{\"TransType\":\"01\",\"TransAmount\":\"1\",\"InvoiceNo\":\"0001\",\"TransAddAmount\":\"O\",\"CardNumber\":\"\",\"Filler\":\"\"}".trim()
-//            Log.e("PosEcr","Request: $req")
-//                val packRequest = briEcrLib.packRequest(req)
-//                val send = briEcrLib.sendSocket(packRequest)
-
-
-/*
-    Request by ByteArray
- */
-                val hexValue = "0202000F30303030303030303031303030303030303030303033303030303030303030303030303020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020032E"
-                val send = briEcrLib.sendSocket(hexValue.decodeHex())
+                val request ="{\"TransType\":\"01\",\"TransAmount\":\"1\",\"InvoiceNo\":\"0001\",\"TransAddAmount\":\"O\",\"CardNumber\":\"\",\"Filler\":\"\"}".trim()
+                val packRequest = briEcrLib.packRequest(request)
+                val send = briEcrLib.sendSocket(packRequest)
 
                 Log.e("PosEcr","isSendSocket Success? : $send")
             }.start()
